@@ -1,0 +1,95 @@
+<div class="jumbotron">
+  <div class="container">
+    <%= form_for @stocks do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <br>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price %>
+        <br>
+        <%= f.text_field :price, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :imageurl %>
+        <br>
+        <%= f.text_field :imageurl, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :url %>
+        <br>
+        <%= f.text_field :url, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <br>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :endtime %>
+        <br>
+        <%= f.text_field :endtime, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :itemid %>
+        <br>
+        <%= f.text_field :itemid, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :category %>
+        <br>
+        <%= f.select :category, options_for_select([["Select One", ""], "Art", "Books", "Cameras", "Collectibles", "Dinnerware", "Home Decor", "Other" ]), :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :subcategory %>
+        <br>
+        <%= f.select :subcategory, options_for_select([["Select One", ""]]), :class => "form-control" %>
+      </div>
+      <%= f.submit :submit, value: "Add Item to Stock", class: "btn btn-success"%>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  
+  publicResult = null;
+
+  $( document ).ready(function(){
+    $.ajax({
+      type: "GET",
+      url: 'http://open.api.ebay.com/shopping?callname=GetSingleItem',
+      dataType: "jsonp",
+      jsonp: "callbackname",
+      crossDomain : true,
+      data: {
+        'siteid': '0',
+				'version': '515',
+    		'appid': 'TheTechS-7d3c-4964-946a-3013a9556b18',
+        'ItemID': '<%= @id %>', // To be replaced with real number in futrue just being used for testing 321439670589
+        'responseencoding': 'JSON',
+        'IncludeSelector': 'Description,ItemSpecifics'
+      },
+      success: function (result) {
+        publicResult = result;
+        
+        $("#stock_title").val(result.Item.Title);
+        $("#stock_price").val(result.Item.ConvertedCurrentPrice.Value);
+        $("#stock_imageurl").val(result.Item.PictureURL[0]);
+        $("#stock_url").val(result.Item.ViewItemURLForNaturalSearch);
+        $("#stock_description").val(result.Item.Description);
+        $("#stock_endtime").val(result.Item.EndTime);
+        $("#stock_itemid").val(result.Item.ItemID);
+        $("#stock_category").attr("class", "form-control");
+        $("#stock_category").change(function() { CatagoryChange(); });
+        $("#stock_subcategory").attr("class", "form-control");
+        
+        console.log(result);
+      },
+      error: function (data) {
+        console.log(arguments);
+      }
+      });
+  });
+  
+</script>

@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron_title">
+  <div class="container">
+    <h1>
+      All Items:
+    </h1> 
+  </div>
+</div>
+
+
+<% @stocks.each do |item| %>
+  <div class="jumbotron jumbotron-br container">
+    <div>
+      <div class="grid">
+        <div class="col-md-8">
+          <h1>
+            <%= link_to item.title, item_path(item.id)  %>
+            <small>
+              $<%= item.price %>
+            </small>
+          </h1>
+          <span>Ends At: <%= item.endtime %></span>
+          <p>
+            <%= item.description.gsub! '<br>', ' ' %>
+          </p>
+        </div>
+        
+        <div class="col-md-4">
+          <img alt="<%= item.title %>" src="<%= item.imageurl %>" width="100%" style="border-radius: 5px;">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body { background-color: #EEE; }
+
+.navbar__dark { background-color: #78909C !important; border-radius: 0; a { color: white; font-size: 2em; } }
+
+.jumbotron { background-color: white; color: silver; }
+
+.jumbotron_title { margin-top: -50px; color: grey;}
+
+.jumbotron-br { border-radius: 10px; box-shadow: 3px 3px 3px 3px grey; }
+.jumbotron-br h1 { font-size: 3em; }
+
+.jumbotron_title_m { padding: 20px; }
+
+.well { background-color: white; color: silver; }
+
+.right-border { border-right: 2px solid silver; border-left: 2px solid silver; }
