@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     if !params[:Submitted]
       @stocks = Stock.all
     else
-      
+      @stocks = Stock.where("title LIKE '%#{params[:STRING]}%' AND category LIKE '%#{params[:stock_category]}%' AND subcategory LIKE '%#{params[:stock_subcategory]}%'").limit(params[:numPerPage]).order(params[:SortBy] + " " + params[:SortDir])
     end
     
   end

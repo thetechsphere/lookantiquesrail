@@ -54,6 +54,10 @@
 <script>
   
   publicResult = null;
+  
+  $("#stock_category").change(function(){
+    CatagoryChange();
+  });
 
   $( document ).ready(function(){
     $.ajax({
