@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
   
   def index
     
-    @stocks = Stock.all
+    if !params[:Submitted]
+      @stocks = Stock.all
+    else
+      
+    end
     
   end
   

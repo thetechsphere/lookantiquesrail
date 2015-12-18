@@ -21,6 +21,7 @@
           <h2>
             <%= link_to 'View On eBay', @stocks.url, class: "btn btn-default", target: "_blank" %>
           </h2>
+          <h3 class="item-description">Details:</h3>
           <p>
             <%= @stocks.description.gsub! '<br>', ' ' %>
           </p>
