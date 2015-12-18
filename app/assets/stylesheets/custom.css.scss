@@ -2,19 +2,139 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$border-card-all: 2.3px;
+
+// Shadow states
+$shadow-state-2dp: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$shadow-state-3dp: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+$shadow-state-4dp: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+$shadow-state-6dp: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+
 body { background-color: #EEE; }
 
-.navbar__dark { background-color: #78909C !important; border-radius: 0; a { color: white; font-size: 2em; } }
+.navbar__dark { 
+    background-color: #939C78 !important; 
+    border-radius: 0; 
+    
+    a { 
+        color: white; 
+        font-size: 13pt; 
+    }
+}
 
-.jumbotron { background-color: white; color: silver; }
+.jumbotron { 
+    background-color: #fff; 
+    color: silver;
+    box-shadow: $shadow-state-2dp;
+}
 
-.jumbotron_title { margin-top: -50px; color: grey;}
+.jumbotron_title { 
+    margin-top: -50px; 
+    color: grey;
+}
 
-.jumbotron-br { border-radius: 10px; box-shadow: 3px 3px 3px 3px grey; }
-.jumbotron-br h1 { font-size: 3em; }
+.jumbotron h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
 
-.jumbotron_title_m { padding: 20px; }
+.jumbotron-br { 
+    border-radius: 3.5px;
+    box-shadow: $shadow-state-3dp; 
+}
 
-.well { background-color: white; color: silver; }
+.jumbotron-br h1 { 
+    font-size: 3em;
+}
 
-.right-border { border-right: 2px solid silver; border-left: 2px solid silver; }
+.jumbotron_title_m { 
+    padding: 20px; 
+}
+
+.well { 
+    background-color: white; 
+    color: silver; 
+}
+
+.right-border { 
+    border-right: 2px solid silver; 
+    border-left: 2px solid silver; 
+}
+
+.nav > li > a {
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+}
+
+.nav > li > a:hover {
+    text-decoration: none;
+    background: #787F61;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background: #787F61;
+}
+
+
+
+//
+//    Footer System
+//
+.footer__box-bottom {
+    width: 100%;
+    left: 0;
+    padding: 20px;
+    padding-left: 10%;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 35px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+//
+//    Item Box System
+//
+.item-description {
+    color: #000;
+}
+
+
+.jumbotron-br .btn {
+    border-radius: 2.5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.jumbotron-br .btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    transition: box-shadow .25s ease-in-out, background .25s ease-in-out;
+    -webkit-transition: box-shadow .25s ease-in-out, background .25s ease-in-out;
+}
+
+.jumbotron-br .btn-default:hover{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: transparent;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
+                0 3px 14px 2px rgba(0, 0, 0, 0.12), 
+                0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
+                0 3px 14px 2px rgba(0, 0, 0, 0.12), 
+                0 5px 5px -3px rgba(0, 0, 0, 0.4);                
+}
+
+.jumbotron-br .btn-default:active {
+    border-color: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);  
+    background: #C7C7C7;
+}

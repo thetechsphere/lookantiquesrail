@@ -3,6 +3,40 @@
     <h1>
       All Items:
     </h1> 
+    <form class="form__container" action="" method="POST">
+
+			<div id="FormObjects">
+
+				<label for="STRING" class="search__disp">Search For: </label>
+				<input class="search__bar" id="STRING" name="STRING" placeholder="Search" type="text">
+				
+				<label class="item__disp" for="numPerPage">Items Per Page: </label>
+				<select id="numPerPage" name="numPerPage" class="class__context-selector">
+					<option value="10">10</option>
+					<option value="25">25</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+				
+				<label class="sort__disp" for="SortBy">Sort By: </label>
+				<select id="SortBy" name="SortBy" class="class__context-selector">
+					<option value="EndTimeSec">Time Left</option>
+					<option value="Price">Price</option>
+					<option value="Title">Title</option>
+				</select>
+				
+				<label class="sort__disp" for="SortDir">Sort Direction: </label>
+				<select id="SortDir" name="SortDir" class="class__context-selector">
+					<option value="ASC">Asc</option>
+					<option value="DESC">Dec</option>
+				</select>
+				
+				<input type="text" name="Submitted" value="true" hidden/>
+
+				<button type="button" class="search__context">Search</button>
+
+			</div>
+		</form>
   </div>
 </div>
 
@@ -19,6 +53,7 @@
             </small>
           </h1>
           <span>Ends At: <%= item.endtime %></span>
+          <h3 class="item-description">Details:</h3>
           <p>
             <%= item.description.gsub! '<br>', ' ' %>
           </p>
