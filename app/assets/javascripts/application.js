@@ -17,7 +17,6 @@
 //= require_tree .
 
 function CatagoryChange(){
-  
   if($("#stock_category").val() == "Art"){
       console.log("Changed To Art");
       $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Prints</option><option>Originals</option>");
