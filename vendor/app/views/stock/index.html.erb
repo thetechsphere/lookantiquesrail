@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron_title">
+  <div class="container">
+    <h2>
+      Get Item From Ebay - <a href='' id="quickBookmark">Quick Add Bookmark</a>
+      <script> // Used to set the url above for the quick add bookmark, required becuase the origin may change
+        $("#quickBookmark").attr(
+          "href", 
+          'javascript:window.open("'+location.origin+'/stock?id="+document.getElementById("descItemNumber").innerHTML);window.back;'
+        );
+        </script>
+    </h2>
+    <hr>
+    <div class="form">
+      <form action="<%= new_stock_path %>" method="get">
+        <div class="form-group">
+          <label for="itemId">Item ID: </label>
+          <br>
+          <input type="text" name="id" class="form-control" placeholder="Item ID #" value="<%=@id%>" >
+          <br>
+          <input type="submit" class="btn btn-success" value="Get Item">
+        </div>
+      </form>
+    </div>
+    
+    <script>
+      if(<%= @GoNextPage %>)
+      {
+        window.location="<%= new_stock_path %>?id=<%=@id%>";
+      }
+    </script>
+    
+  </div>
+</div>

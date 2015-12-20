@@ -1,0 +1,30 @@
+
+<div class="jumbotron jumbotron_title">
+  <div class="container">
+    <h1>
+      Single Item
+    </h1> 
+  </div>
+</div>
+
+<div class="container">
+    <div>
+      <div class="grid">
+        <div class="col-md-8 well">
+          <h1>
+            <%= link_to @stocks.title, stock_path(@stocks.id)  %>
+            <small>
+              $<%= @stocks.price %>
+            </small>
+          </h1>
+          <p>
+            <%= @stocks.description %>
+          </p>
+        </div>
+        
+        <div class="col-md-4 well">
+          <img alt="<%= @stocks.title %>" src="<%= @stocks.imageurl %>" width="100%" style="border-radius: 5px;">
+        </div>
+      </div>
+    </div>
+</div>

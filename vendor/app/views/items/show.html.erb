@@ -1,0 +1,35 @@
+
+<div class="jumbotron jumbotron_title">
+  <div class="container">
+    <h1>
+      Single Item
+    </h1> 
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-br container">
+    <div>
+      <div class="grid">
+        <div class="col-md-8">
+          <h1>
+            <%= @stocks.title %>
+            <small>
+              $<%= @stocks.price %>
+            </small>
+          </h1>
+          <span>Ends At: <%= @stocks.endtime %></span>
+          <h2>
+            <%= link_to 'VIEW ON EBAY', @stocks.url, class: "btn btn-default", target: "_blank" %>
+          </h2>
+          <h3 class="item-description">Details:</h3>
+          <p>
+            <%= @stocks.description.gsub! '<br>', ' ' %>
+          </p>
+        </div>
+        
+        <div class="col-md-4">
+          <img alt="<%= @stocks.title %>" src="<%= @stocks.imageurl %>" width="100%" style="border-radius: 5px;">
+        </div>
+      </div>
+    </div>
+</div>

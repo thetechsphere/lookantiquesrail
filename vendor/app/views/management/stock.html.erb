@@ -1,0 +1,26 @@
+<div class="jumbotron jumbotron_title jumbotron_title_m">
+  <div class="container">
+    <h2>
+      Management Page
+    </h2>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-br container">
+  <div clas="row">
+    
+    <div class="col-md-2 right-border">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><%= link_to "Home", management_home_path %></li>
+        <li role="presentation" class="active"><%= link_to "Stock", management_stock_path %></li>
+        <li role="presentation"><%= link_to "New Item", management_newitem_path %></li>
+      </ul>
+    </div>
+    
+    <div class="col-md-10">
+      This is the managament stock path
+    </div>
+    
+  </div>
+</div>
