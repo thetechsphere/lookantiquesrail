@@ -14,18 +14,18 @@
 ActiveRecord::Schema.define(version: 20151217185134) do
 
   create_table "stocks", force: :cascade do |t|
-    t.string   "category"
-    t.string   "subcategory"
-    t.string   "title"
-    t.text     "description"
-    t.decimal  "price"
-    t.string   "url"
-    t.string   "imageurl"
+    t.string   "category",    limit: 255
+    t.string   "subcategory", limit: 255
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.decimal  "price",                     precision: 10
+    t.string   "url",         limit: 255
+    t.string   "imageurl",    limit: 255
     t.boolean  "locked"
-    t.integer  "quanity"
+    t.integer  "quanity",     limit: 4
     t.integer  "itemid",      limit: 8
-    t.string   "endtime"
-    t.integer  "endtimesec"
+    t.string   "endtime",     limit: 255
+    t.integer  "endtimesec",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
