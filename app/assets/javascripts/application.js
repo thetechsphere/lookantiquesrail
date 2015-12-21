@@ -19,24 +19,24 @@
 function CatagoryChange(){
   if($("#stock_category").val() == "Art"){
       console.log("Changed To Art");
-      $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Prints</option><option>Originals</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>Prints</option><option>Originals</option>");
   }else if($("#stock_category").val() == "Books"){
       console.log("Changed To Books");
-      $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Comics</option><option>Novels</option><option>Other</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>Comics</option><option>Novels</option><option>Other</option>");
   }else if($("#stock_category").val() == "Cameras"){
       console.log("Changed To Cameras");
-      $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Cameras</option><option>Other</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>Cameras</option><option>Other</option>");
   }else if($("#stock_category").val() == "Collectibles"){
       console.log("Changed To Collectibles");
-      $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Bottles</option><option>Clocks</option><option>Steins</option><option>Other</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>Bottles</option><option>Clocks</option><option>Steins</option><option>Other</option>");
   }else if($("#stock_category").val() == "Dinnerware"){
       console.log("Changed To Dinnerware");
-      $("#stock_subcategory").html("<option'>Please Choose A Sub Catagory</option><option>China</option><option>Pewter</option><option>Silver</option><option>Other</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>China</option><option>Pewter</option><option>Silver</option><option>Other</option>");
   }else if($("#stock_category").val() == "Home Decor"){
       console.log("Changed To Home Decor");
-      $("#stock_subcategory").html("<option>Please Choose A Sub Catagory</option><option>Vases</option><option>Other</option>");
+      $("#stock_subcategory").html("<option>Select One</option><option>Vases</option><option>Other</option>");
   }else if($("#stock_category").val() == "Other"){
-      console.log("Changed To Home Decor");
+      console.log("OTHER");
       $("#stock_subcategory").html("<option>~~OTHER~~</option>");
   }else{
     console.log("Changed To Defualt");

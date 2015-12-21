@@ -5,7 +5,15 @@ class ItemsController < ApplicationController
     if !params[:Submitted]
       @stocks = Stock.all
     else
-      @stocks = Stock.where("title LIKE '%#{params[:STRING]}%' AND category LIKE '%#{params[:stock_category]}%' AND subcategory LIKE '%#{params[:stock_subcategory]}%'").limit(params[:numPerPage]).order(params[:SortBy] + " " + params[:SortDir])
+      if params[:category] != "Select One"
+        if params[:subcategory] == "Select One"
+          @stocks = Stock.where("title LIKE '%#{params[:STRING]}%' AND category LIKE '%#{params[:category]}%'").limit(params[:numPerPage]).order(params[:SortBy] + " " + params[:SortDir])
+        else
+          @stocks = Stock.where("title LIKE '%#{params[:STRING]}%' AND category LIKE '%#{params[:category]}%' AND subcategory LIKE '%#{params[:subcategory]}%'").limit(params[:numPerPage]).order(params[:SortBy] + " " + params[:SortDir])
+        end
+      else
+        @stocks = Stock.where("title LIKE '%#{params[:STRING]}%'").limit(params[:numPerPage]).order(params[:SortBy] + " " + params[:SortDir])
+      end
     end
     
   end
