@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :stock, as: 'stocks'
   resources :items, as: 'items'
+  resources :buy_antiques, as: 'buy_antiques'
   
   get 'error_pages/construction' => 'error_pages#construction'
   
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   get 'management/home' => 'management#index'
   get 'management/stock' => 'management#stock'
   get 'management/newItem' => 'stock#index', as: 'management_newitem'
+  
+  post 'buy_antiques' => 'buy_antiques#index', as: 'buyantiques'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
