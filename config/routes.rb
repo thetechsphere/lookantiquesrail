@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   get 'management/home' => 'management#index'
   get 'management/stock' => 'management#stock'
   get 'management/newItem' => 'stock#index', as: 'management_newitem'
+  get 'management/showBuyRequests' => 'management#showBuyRequests', as: 'showitemrequests'
+  patch 'management/acceptitem/:id' => 'management#acceptitem', as: 'acceptitem'
+  patch 'management/rejectitem/:id' => 'management#rejectitem', as: 'rejectitem'
+  patch 'management/changemind/:id' => 'management#changemind', as: 'changemind'
+  get 'management/contactItemSeller/:id' => 'management#contactItemSeller', as: 'contactItemSeller' 
+  
+  delete 'stock/:id' => 'stock#destroy', as: 'destroystock'
   
   post 'buy_antiques' => 'buy_antiques#index', as: 'buyantiques'
   

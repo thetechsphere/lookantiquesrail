@@ -13,6 +13,9 @@ class StockController < ApplicationController
     
   end
   
+  def edit 
+    @stocks = Stock.find(params[:id])
+  end
   
   def new 
     @id = params[:id]
@@ -22,6 +25,23 @@ class StockController < ApplicationController
   def create
     @stocks = Stock.create(stock_perams)
     redirect_to :stocks
+  end
+  
+  def update
+    @stocks = Stock.find(params[:id])
+    
+    if @stocks.update(stock_perams)
+      redirect_to @stocks
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @stocks = Stock.find(params[:id])
+    @stocks.destroy
+    
+    redirect_to management_stock_path
   end
   
   private

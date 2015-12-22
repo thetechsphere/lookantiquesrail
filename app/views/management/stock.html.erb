@@ -3,6 +3,10 @@
     <h2>
       Management Page
     </h2>
+    <ol class="breadcrumb"> <!-- I Don't Know If I Like This or not.... Baybe not on the management page... Ill FIgure It Out later -->
+      <li><%= link_to "Website Home", root_path %></li>
+      <li class="active">Management Page</li>
+    </ol>
   </div>
 </div>
 
@@ -15,11 +19,45 @@
         <li role="presentation"><%= link_to "Home", management_home_path %></li>
         <li role="presentation" class="active"><%= link_to "Stock", management_stock_path %></li>
         <li role="presentation"><%= link_to "New Item", management_newitem_path %></li>
+        <li role="presentation"><%= link_to "Buy Item Requests", showitemrequests_path %></li>
       </ul>
     </div>
     
     <div class="col-md-10">
-      This is the managament stock path
+      
+      <% @stock.each do |_STOCK| %>
+      
+        <div class="well" style="color: rgb(101, 101, 101);">
+          <div class="row">
+            
+            <div class="col-md-2" style="border-right: 3px solid grey;">
+              <%= link_to 'eBay Link', _STOCK.url, class: "btn btn-success btn-block", target: "_blank" %>
+              <br>
+              <%= link_to "See Item", stock_path(_STOCK), class: "btn btn-info btn-block" %>
+              <br>
+              <%= link_to "Edit", edit_stock_path(_STOCK), class: "btn btn-warning btn-block" %>
+              <br>
+              <%= link_to "Delete", destroystock_path(_STOCK), class: "btn btn-danger btn-block", :method => :delete %>
+            </div>
+            
+            <div class="col-md-10">
+              <h4>
+                <%= _STOCK.title %>
+                <small>
+                  List Price: $ <%= _STOCK.price %>
+                </small>
+              </h4>
+              <hr>
+              <h5>
+                <%= _STOCK.description %>
+              </h5>
+            </div>
+            
+          </div>
+        </div>
+      
+      <% end %>
+      
     </div>
     
   </div>

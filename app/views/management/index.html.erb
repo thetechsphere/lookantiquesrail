@@ -3,11 +3,16 @@
     <h2>
       Management Page
     </h2>
+    <ol class="breadcrumb"> <!-- I Don't Know If I Like This or not.... Baybe not on the management page... Ill FIgure It Out later -->
+      <li><%= link_to "Website Home", root_path %></li>
+      <li class="active">Management Page</li>
+    </ol>
   </div>
 </div>
 
 
 <div class="jumbotron jumbotron-br container">
+
   <div clas="row">
     
     <div class="col-md-2 right-border">
@@ -15,11 +20,12 @@
         <li role="presentation" class="active"><%= link_to "Home", management_home_path %></li>
         <li role="presentation"><%= link_to "Stock", management_stock_path %></li>
         <li role="presentation"><%= link_to "New Item", management_newitem_path %></li>
+        <li role="presentation"><%= link_to "Buy Item Requests", showitemrequests_path %></li>
       </ul>
     </div>
     
     <div class="col-md-10">
-      This is the managament homepage
+      Something Goes Here!!
     </div>
     
   </div>
