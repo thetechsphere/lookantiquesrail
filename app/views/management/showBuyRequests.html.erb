@@ -1,0 +1,70 @@
+<div class="jumbotron jumbotron_title jumbotron_title_m">
+  <div class="container">
+    <h2>
+      Management Page
+    </h2>
+    <ol class="breadcrumb"> <!-- I Don't Know If I Like This or not.... Baybe not on the management page... Ill FIgure It Out later -->
+      <li><%= link_to "Website Home", root_path %></li>
+      <li class="active">Management Page</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-br container">
+  <div clas="row">
+    
+    <div class="col-md-2 right-border">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><%= link_to "Home", management_home_path %></li>
+        <li role="presentation"><%= link_to "Stock", management_stock_path %></li>
+        <li role="presentation"><%= link_to "New Item", management_newitem_path %></li>
+        <li role="presentation" class="active"><%= link_to "Buy Item Requests", showitemrequests_path %></li>
+      </ul>
+    </div>
+    
+    <div class="col-md-10">
+      
+      <% @buyRequests.each do |_BUYREQUESTS| %>
+      
+        <div class="well" style="color: rgb(101, 101, 101);">
+          <div class="row">
+            
+            <div class="col-md-2" style="border-right: 3px solid grey;">
+                <% if _BUYREQUESTS.status == "new" %>
+                  <%= link_to "Accept Item", acceptitem_path(_BUYREQUESTS), :method => "patch", class: "btn btn-success btn-block" %>
+                  <br>
+                  <%= link_to "Reject Item", rejectitem_path(_BUYREQUESTS), :method => "patch", class: "btn btn-warning btn-block" %>
+                <% else %>
+                  <h3>
+                    Current Status:<br>
+                    <%= _BUYREQUESTS.status %>
+                  </h3>
+                  <%= link_to "Change Mind", changemind_path(_BUYREQUESTS), :method => "patch", class: "btn btn-info btn-block" %>
+                <% end %>
+            </div>
+            
+            <div class="col-md-10">
+              <h4>
+                <%= _BUYREQUESTS.title %>
+                <small>
+                  Asking Price: $ <%= _BUYREQUESTS.askingprice %>
+                </small>
+                <br>
+                Seller: <%= _BUYREQUESTS.name %>
+              </h4>
+              <hr>
+              <h5>
+                <%= _BUYREQUESTS.description %>
+              </h5>
+            </div>
+            
+          </div>
+        </div>
+      
+      <% end %>
+      
+    </div>
+    
+  </div>
+</div>

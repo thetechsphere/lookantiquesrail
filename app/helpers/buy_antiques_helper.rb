@@ -1,0 +1,2 @@
+module BuyAntiquesHelper
+end

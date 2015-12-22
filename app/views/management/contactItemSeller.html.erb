@@ -1,0 +1,60 @@
+<div class="jumbotron jumbotron_title jumbotron_title_m">
+  <div class="container">
+    <h2>
+      Please Contact The Seller!
+    </h2>
+    <ol class="breadcrumb"> <!-- I Don't Know If I Like This or not.... Baybe not on the management page... Ill FIgure It Out later -->
+      <li><%= link_to "Website Home", root_path %></li>
+      <li><%= link_to "Management Page", management_home_path %></li>
+      <li class="active">Contact Item Seller</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-br container">
+
+  <div class="well" style="color: rgb(101, 101, 101);">
+    <h4>
+      Status: 
+      <% if @contactSeller.status == "Accepted!" %>
+        <span class="btn btn-success">
+          <%= @contactSeller.status %>
+        </span>
+      <% else %>
+        <span class="btn btn-danger">
+          <%= @contactSeller.status %>
+        </span>
+      <% end %>
+      
+      <br>
+      <%= @contactSeller.title %>
+      <small>
+        Asking Price: $ <%= @contactSeller.askingprice %>
+      </small>
+      <br>
+      Seller: <%= @contactSeller.name %>
+    </h4>
+    <h5>
+      <%= @contactSeller.description %>
+    </h5>
+    <hr>
+    
+    <h3>
+      Seller Info:
+    </h3>
+    <h4>
+      Name: <%= @contactSeller.name %>
+      <br>
+      Email: <%= @contactSeller.email %>
+      <% if defined? @contactSeller.phone %>
+        <br>
+        Phone (Maybe): <%= @contactSeller.phone %>
+      <% end %>
+    </h4>
+    
+    <%= link_to "Click Me When Done", showitemrequests_path, class: "btn btn-success btn-block" %>
+    
+  </div>
+
+</div>
