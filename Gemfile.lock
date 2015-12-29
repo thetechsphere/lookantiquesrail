@@ -59,6 +59,7 @@ GEM
     ebay-trader (0.9.7)
       activesupport (~> 4.0)
       ox (~> 2.2)
+    encrypted_strings (0.3.3)
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -155,6 +156,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   ebay-trader (~> 0.9.7)
+  encrypted_strings
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.20)

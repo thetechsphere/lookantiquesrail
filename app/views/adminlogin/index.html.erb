@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-br">
+  <div class="container">
+    <h1>
+      Admin Login Page:
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>
+      Login:
+    </h2>
+    <div>
+      
+      <%= form_for(@adminlogin, url: "adminlogin#login") do |f| %>
+        
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        
+        <%= submit_tag("Login") %>
+        
+      <% end %>
+      
+    </div>
+  </div>
+</div>

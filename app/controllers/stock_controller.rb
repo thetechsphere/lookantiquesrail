@@ -1,6 +1,9 @@
 class StockController < ApplicationController
   
   def index
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     @id = params[:id]
     if @id
       @GoNextPage = true
@@ -8,26 +11,41 @@ class StockController < ApplicationController
   end
   
   def show
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     
     @stocks = Stock.find(params[:id])
     
   end
   
-  def edit 
+  def edit
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end 
     @stocks = Stock.find(params[:id])
   end
   
   def new 
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     @id = params[:id]
     @stocks = Stock.new
   end
   
   def create
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     @stocks = Stock.create(stock_perams)
     redirect_to :stocks
   end
   
   def update
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     @stocks = Stock.find(params[:id])
     
     if @stocks.update(stock_perams)
@@ -38,6 +56,9 @@ class StockController < ApplicationController
   end
   
   def destroy
+    if session[:isloggedin] != true
+      redirect_to loginstatus_path("Please Login First");
+    end
     @stocks = Stock.find(params[:id])
     @stocks.destroy
     

@@ -1,0 +1,50 @@
+                  Prefix Verb   URI Pattern                                 Controller#Action
+                    root GET    /                                           root#index
+                  stocks GET    /stock(.:format)                            stock#index
+                         POST   /stock(.:format)                            stock#create
+               new_stock GET    /stock/new(.:format)                        stock#new
+              edit_stock GET    /stock/:id/edit(.:format)                   stock#edit
+                   stock GET    /stock/:id(.:format)                        stock#show
+                         PATCH  /stock/:id(.:format)                        stock#update
+                         PUT    /stock/:id(.:format)                        stock#update
+                         DELETE /stock/:id(.:format)                        stock#destroy
+                   items GET    /items(.:format)                            items#index
+                         POST   /items(.:format)                            items#create
+                new_item GET    /items/new(.:format)                        items#new
+               edit_item GET    /items/:id/edit(.:format)                   items#edit
+                    item GET    /items/:id(.:format)                        items#show
+                         PATCH  /items/:id(.:format)                        items#update
+                         PUT    /items/:id(.:format)                        items#update
+                         DELETE /items/:id(.:format)                        items#destroy
+            buy_antiques GET    /buy_antiques(.:format)                     buy_antiques#index
+                         POST   /buy_antiques(.:format)                     buy_antiques#create
+         new_buy_antique GET    /buy_antiques/new(.:format)                 buy_antiques#new
+        edit_buy_antique GET    /buy_antiques/:id/edit(.:format)            buy_antiques#edit
+             buy_antique GET    /buy_antiques/:id(.:format)                 buy_antiques#show
+                         PATCH  /buy_antiques/:id(.:format)                 buy_antiques#update
+                         PUT    /buy_antiques/:id(.:format)                 buy_antiques#update
+                         DELETE /buy_antiques/:id(.:format)                 buy_antiques#destroy
+      create_admin_index GET    /create_admin(.:format)                     create_admin#index
+                         POST   /create_admin(.:format)                     create_admin#create
+        new_create_admin GET    /create_admin/new(.:format)                 create_admin#new
+       edit_create_admin GET    /create_admin/:id/edit(.:format)            create_admin#edit
+            create_admin GET    /create_admin/:id(.:format)                 create_admin#show
+                         PATCH  /create_admin/:id(.:format)                 create_admin#update
+                         PUT    /create_admin/:id(.:format)                 create_admin#update
+                         DELETE /create_admin/:id(.:format)                 create_admin#destroy
+error_pages_construction GET    /error_pages/construction(.:format)         error_pages#construction
+             items_index GET    /items/index(.:format)                      items#index
+              adminlogin GET    /adminlogin(.:format)                       adminlogin#index
+                         POST   /adminlogin(.:format)                       adminlogin#login
+                         GET    /loginstatus/:status(.:format)              adminlogin#status
+              management GET    /management(.:format)                       management#index
+         management_home GET    /management/home(.:format)                  management#index
+        management_stock GET    /management/stock(.:format)                 management#stock
+      management_newitem GET    /management/newItem(.:format)               stock#index
+        showitemrequests GET    /management/showBuyRequests(.:format)       management#showBuyRequests
+              acceptitem PATCH  /management/acceptitem/:id(.:format)        management#acceptitem
+              rejectitem PATCH  /management/rejectitem/:id(.:format)        management#rejectitem
+              changemind PATCH  /management/changemind/:id(.:format)        management#changemind
+       contactItemSeller GET    /management/contactItemSeller/:id(.:format) management#contactItemSeller
+            destroystock DELETE /stock/:id(.:format)                        stock#destroy
+             buyantiques POST   /buy_antiques(.:format)                     buy_antiques#index

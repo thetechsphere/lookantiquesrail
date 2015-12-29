@@ -1,0 +1,2 @@
+module CreateAdminHelper
+end

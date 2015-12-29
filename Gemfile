@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'ebay-trader', '~> 0.9.7'
+gem 'encrypted_strings'
 
 #End Custom
 
