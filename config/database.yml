@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: python
+  username: tntwzrd
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: lookAntiques_production
-  username: lookAntiques
-  password: <%= ENV['LOOKANTIQUES_DATABASE_PASSWORD'] %>
+  username: root
+  password: python
